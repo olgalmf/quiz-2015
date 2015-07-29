@@ -1,8 +1,49 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-a {
-  color: #00B7FF;
+body {
+  font: 16px Georgia, serif;
+}
+
+#page-wrap {
+  marign: 2% auto;
+  color: white;
+}
+
+#page-wrap > .main {
+  border: 1px solid #999;
+  padding: 1%;
+  margin-bottom: 1px;
+  color: black;
+}
+
+section > div {
+  padding: 20px;
+}
+
+header,
+nav,
+section,
+footer {
+  background: #eee;
+  text-align: center;
+}
+
+nav span {
+  margin: 0 10px 0 0;
+}
+
+.author h3 {
+  margin: 0 0 20px 0;
+}
+.author p {
+  float: left;
+}
+
+.author img {
+  float: right;
+  border-radius: 50%;
+  width: 120px;
 }
