@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <meta charset="utf-8"><title>Quiz Show</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+	<table>
+	<div id='c_search'>
+    <form method="get" action="/quizes">
+        <input type='text' name='search' id='search' placeholder='Buscar preguntas'/>
+        <input type='submit' value='Buscar'/>
+    </form>
+</div>
+
+
+<%
+var i;
+if (quizes.length > 0)
+{
+    %>
+    <table id='t_questions'>
+        <%
+        for (i=0; i < quizes.length; i++)
+        {
+            %>
+            <tr><td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td></tr>
+            <%
+        }
+        %>
+    </table>
+    <%
+}
+else
+{
+    %>
+    <div class='no_results'>No se han encontrado preguntas para el criterio de búsqueda</div>
+    <%
+}
+%>
+	</table>
+  </body>
+</html>
