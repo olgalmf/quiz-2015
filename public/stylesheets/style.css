@@ -22,6 +22,14 @@ body
     color: black;
 }
 
+
+#ErrorMsgs
+{
+    color: #f61;
+    font-size: smaler
+}
+
+ 
 section > div
 {
     padding: 20px;

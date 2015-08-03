@@ -14,7 +14,7 @@ router.param('quizId', quizController.load);  // autoload :quizId
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Quiz Show' });
+  res.render('index', { title: 'Quiz Show' , errors: [] });
 });
 
 router.get('/quizes', quizController.index);
