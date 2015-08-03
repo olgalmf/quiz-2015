@@ -131,3 +131,10 @@ nav span
     list-style-type: disc;
     list-style-position: outside;
 }
+
+.p_tema
+{
+    font-style: italic;
+    font-weight: bold;
+}
+
