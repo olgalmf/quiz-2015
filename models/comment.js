@@ -10,5 +10,8 @@ module.exports = function(sequelize, DataTypes) {
       publicado: {
       	type: DataTypes.BOOLEAN,
       	defaultValue: false
-       }
-    }
+      }
+    }    
+  );
+}
+
