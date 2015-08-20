@@ -41,6 +41,31 @@ app.use(function(req, res, next) {
   next();
 });
 
+// Auto-logout
+app.use(function(req, res, next) {
+  //Solamente si se inició sesión
+  if(req.session.user){
+    var date = new Date().getTime();
+    //Primer acceso
+    if(!req.session.lastTime){
+      req.session.lastTime = date;
+      next();
+    }
+    else{
+      var diff = date - req.session.lastTime;
+      req.session.lastTime=date;
+      if(diff<20000){ //OJO: 20 segundos, NO 2 minutos
+        next();
+      }
+      else{
+        delete req.session.lastTime;
+        delete req.session.user;
+        res.redirect('/login');
+      }
+    }
+  }else next();
+});
+
 app.use('/', routes);
 
 // catch 404 and forward to error handler
